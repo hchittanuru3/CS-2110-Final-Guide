@@ -13,4 +13,6 @@
        // This code will always ensure that a is 11, but with every invocation of func(), b increases one.
        ```
    * Volatile: This keyword tells the compiler not to optimize anything to do with the variable, and this would be used when you're interfacing with hardware.
+       * For example, if you're using a variable that is mapped to RAM, you want to have a volatile qualifier in front of it, like ```volatile int mappedToMem; ```.
+       
        
