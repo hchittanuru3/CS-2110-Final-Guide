@@ -12,4 +12,5 @@
        }
        // This code will always ensure that a is 11, but with every invocation of func(), b increases one.
        ```
+   * Volatile: This keyword tells the compiler not to optimize anything to do with the variable, and this would be used when you're interfacing with hardware.
        
