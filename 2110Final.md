@@ -17,4 +17,4 @@
    * Auto: An auto variable is a variable that is allocated and deallocated automatically when the program flow enters the variable's scope. We don't need to use the keyword auto because the compiler automatically interprets a variable as auto.
    
 2. Macros:
-    * For a macro: the format is ```#define```
+    * For a macro: the format is ```#define ADD(a,b) ((a) + (b))``` or ```#define LIST_SIZE 1024```.
