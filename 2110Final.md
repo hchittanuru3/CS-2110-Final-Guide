@@ -60,6 +60,6 @@
     * **File Formats:**
         * *.c and .h:* These are the source files.
         * *.i:* The file that results after the source files are preprocessed.
-        * *.o:* These are the object files.
-        * *.exe:* This is the executable.
+        * *.o:* These are the object files, after files are compiled (produced by the compiler) but not linked.
+        * *.exe:* This is the executable, after the files are all linked together.
         
