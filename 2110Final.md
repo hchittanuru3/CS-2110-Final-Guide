@@ -14,7 +14,7 @@
        ```
    * **volatile:** This keyword tells the compiler not to optimize anything to do with the variable, and this would be used when you're interfacing with hardware.
        * For example, if you're using a variable that is mapped to RAM, you want to have a volatile qualifier in front of it, like ```volatile int mappedToMem; ```.
-   * **auto:** An auto variable is a variable that is allocated and deallocated automatically when the program flow enters the variable's scope. We don't need to use the keyword auto because the compiler automatically interprets a variable as auto.
+   * **auto:** An auto variable is a variable that is allocated and deallocated automatically when the program flow enters the variable's scope. We don't need to use the keyword auto because the compiler automatically interprets a local variable as auto, as it is on every local variable.
    * **const:**
    * **register:**
    * **extern:**
@@ -55,3 +55,11 @@
         * Always use sizeof(), compared to calculating sizes of data types by hand.
 
 7. ***GBA:***
+
+8. ***Compiling:***
+    * **File Formats:**
+        * *.c and .h:* These are the source files.
+        * *.i:* The file that results after the source files are preprocessed.
+        * *.o:* These are the object files.
+        * *.exe:* This is the executable.
+        
