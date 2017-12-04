@@ -34,4 +34,5 @@
      ptr = &x;
      return *(int*) ptr;
      ```
+     * Using arrays in C uses pointers. We can use a pointer to point to the first element in the array, and everytime you want to access the next element you can increment the pointer and dereference it.
      
