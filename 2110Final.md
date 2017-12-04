@@ -47,6 +47,8 @@
       int width;
     };
     ```
+    * **NOTE:** You want to pass in pointers to structures, rather than the structure itself into functions, because structures are large, and you don't want to put them on the stack for no reason.
+    
 5. ***Dynamic Memory Allocation:***
 
 6. ***Common C Functions:***
@@ -57,7 +59,7 @@
 7. ***GBA:***
     * **Size of data types:**
         * *char:* 1
-        * *short:* 4
+        * *short:* 2
         * *int:* 4
         * *pointer:* 8
 
