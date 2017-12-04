@@ -18,3 +18,12 @@
    
 2. Macros:
     * For a macro: the format is ```#define ADD(a,b) ((a) + (b))``` or ```#define LIST_SIZE 1024```. The parentheses around the arguments in the function macro and no semicolon are important features.
+    
+3. Pointers:
+    * A pointer is a variable that contains the address of another variable. The following example illustrates how to use a pointer and assign it:
+    ```c
+    int x = 0;
+    int *ptr;
+    ptr = &x;
+     ```
+     *
