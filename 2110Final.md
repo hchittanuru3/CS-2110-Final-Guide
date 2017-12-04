@@ -55,6 +55,11 @@
         * Always use sizeof(), compared to calculating sizes of data types by hand.
 
 7. ***GBA:***
+    * **Size of data types:**
+        * *char:* 1
+        * *short:* 4
+        * *int:* 4
+        * *pointer:* 8
 
 8. ***Compiling:***
     * **File Formats:**
