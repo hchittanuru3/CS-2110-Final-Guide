@@ -44,7 +44,7 @@
       int width;
     };
     ```
-5. ***Malloc:***
+5. ***Dynamic Memory Allocation:***
 
 6. ***Common C Functions:***
     * **qsort**:
