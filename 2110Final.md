@@ -44,3 +44,6 @@
       int width;
     };
     ```
+5. ***Malloc:***
+
+6. ***Common C Functions:***
