@@ -26,4 +26,4 @@
     int *ptr;
     ptr = &x;
      ```
-     *
+     * Dereferencing pointers is the action of accessing what the pointer is pointing to. Looking at the previous example, we can say that ```x == *ptr``` is true. The operator ```*``` is used to dereference a pointer.
