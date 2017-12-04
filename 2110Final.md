@@ -38,6 +38,7 @@
      return *(int*) ptr;
      ```
      * Arrays in C use pointers. We can use a pointer to point to the first element in the array, and everytime you want to access the next element you can increment the pointer and dereference it.
+     * **Function Pointers:**
      
 4. ***Structures:***
     * A structure is a collection of variables grouped together under a single name, similar to a class. 
