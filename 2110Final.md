@@ -49,5 +49,6 @@
 6. ***Common C Functions:***
     * **qsort**:
     * **sizeof**:
+        * Always use sizeof(), compared to calculating sizes of data types by hand.
 
 7. ***GBA:***
