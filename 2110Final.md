@@ -16,14 +16,22 @@
        * For example, if you're using a variable that is mapped to RAM, you want to have a volatile qualifier in front of it, like ```volatile int mappedToMem; ```.
    * Auto: An auto variable is a variable that is allocated and deallocated automatically when the program flow enters the variable's scope. We don't need to use the keyword auto because the compiler automatically interprets a variable as auto.
    
-2. Macros:
+2. ***Macros:***
     * For a macro: the format is ```#define ADD(a,b) ((a) + (b))``` or ```#define LIST_SIZE 1024```. The parentheses around the arguments in the function macro and no semicolon are important features.
     
-3. Pointers:
+3. ***Pointers:***
     * A pointer is a variable that contains the address of another variable. The following example illustrates how to use a pointer and assign it:
     ```c
     int x = 0;
     int *ptr;
     ptr = &x;
      ```
-     * Dereferencing pointers is the action of accessing what the pointer is pointing to. Looking at the previous example, we can say that ```x == *ptr``` is true. The operator ```*``` is used to dereference a pointer.
+     * Dereferencing pointers is the action of accessing what the pointer is pointing to. The operator ```*``` is used to dereference a pointer. Looking at the previous example, we can say that ```x == *ptr``` is true. 
+     * *NOTE:* You cannot dereference a void pointer, because C's compiler doesn't know the size of the object it's pointing to. To work around this, we can do the following:
+     ```c
+     void *ptr;
+     int x = 20;
+     ptr = &x;
+     return *(int*) ptr;
+     ```
+     
