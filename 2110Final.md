@@ -73,3 +73,4 @@
         * *.exe:* This is the executable, after the files are all linked together.
         * *Order of Operations:* Source -> Pre-Processor -> Compiler -> Assembler -> Linker -> Executable
         
+9. ***File I/O:***
