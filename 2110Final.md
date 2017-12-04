@@ -1,5 +1,5 @@
 # CS 2110 Final Guide
-1. **Keywords in C**
+1. ***Keywords in C***
    * Static: Static can be used in two cases:
        * Global variables (or) functions: Using static restricts the scope of the variable/function to the file it is in.
        * In-function variables: The variable is stored in statically allocated memory, so the value of it won't be reset everytime the function is invocated.
@@ -27,7 +27,7 @@
     ptr = &x;
      ```
      * Dereferencing pointers is the action of accessing what the pointer is pointing to. The operator ```*``` is used to dereference a pointer. Looking at the previous example, we can say that ```x == *ptr``` is true. 
-     * *NOTE:* You cannot dereference a void pointer, because C's compiler doesn't know the size of the object it's pointing to. To work around this, we can do the following:
+     * **NOTE:** You cannot dereference a void pointer, because C's compiler doesn't know the size of the object it's pointing to. To work around this, we can do the following:
      ```c
      void *ptr;
      int x = 20;
