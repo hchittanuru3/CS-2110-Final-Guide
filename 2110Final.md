@@ -58,7 +58,7 @@
 		void (*fun_ptr)(int) = fun;
 	}
 	```
-		* Used for passing functions in as parameters into other functions
+	    * Used for passing functions in as parameters into other functions
 	 
 4. ***Structures:***
 	* A structure is a collection of variables grouped together under a single name, similar to a class. 
