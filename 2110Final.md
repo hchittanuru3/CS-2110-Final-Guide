@@ -46,7 +46,7 @@
 	return *(int*) ptr;
 	```
 	* Arrays in C use pointers. We can use a pointer to point to the first element in the array, and everytime you want to access the next element you can increment the pointer and dereference it.
-	* **Function Pointers:** Having a pointer that points to code rather than
+	* **Function Pointers:** Having a pointer that points to code, usually used for dynamically being able to call a function
 	```c
 	void fun(int a) {
 		printf("This is the value %d", a);
@@ -69,24 +69,43 @@
 	};
 	```
 	* **NOTE:** You want to pass in pointers to structures, rather than the structure itself into functions, because structures are large, and you don't want to put them on the stack for no reason.
+
+5. ***Typedef:*** Use this keyword to makes aliases for data types, or structs
+	```c
+	typedef struct rectangle {
+		int length;
+		int width;
+	} alias_name;
+	```
+	```c
+	typedef some_alias_name int;
+	```
 	
-5. ***Dynamic Memory Allocation:***
+6. ***Dynamic Memory Allocation:***
+	* **free:** Deallocates the memory pointed to at the adddress
+		```c
+		void free(void* pointer);
+		```
 
-6. ***Common C Functions:***
-	* **qsort**:
-	* **sizeof**:
-		* Always use sizeof(), compared to calculating sizes of data types by hand.
+7. ***Common C Functions:***
+	* **qsort:**
+	* **sizeof:** Gives the size of the data type in the given 
+		* Always use sizeof(), compared to hardcoding these values, as different systems might have different implementations
+		```c
+		int size_of_int = sizeof(int);
+		```
 
-7. ***GBA:***
+8. ***GBA:***
 	* **Size of data types:**
-		* *char:* 1
-		* *short:* 2
-		* *int:* 4
-		* *pointer:* 8
+		* *char:* 1 byte
+		* *short:* 2 bytes
+		* *int:* 4 bytes
+		* *pointer:* 8 bytes
 
-8. ***Compiling:***
+9. ***Compiling:***
 	* **File Formats:**
-		* *.c and .h:* These are the source files.
+		* *.c* Source files with code
+		* *.h:* Header files with prototypes, structs and macros
 		* *.i:* The file that results after the source files are preprocessed.
 		* *.o:* These are the object files, after files are compiled (produced by the compiler) but not linked.
 		* *.s:* These are the assembly files, between the assembler and linker.
