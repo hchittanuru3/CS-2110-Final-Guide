@@ -115,4 +115,11 @@
 		
 9. ***Basic I/O and File I/O:***
 	* **getchar()**: ```getchar()``` returns the next input character each time it's called, or EOF when it reaches the end of the file. It returns an ```int```.
-	* **putchar()**: ```putchar(c)``` puts the character c on the standard output (usually the screen)
+	* **putchar()**: ```putchar(c)``` puts the character c , or EOF if there's an error, on the standard output (usually the screen). 
+	* **Basic printf() conversions:**
+		* d, i: decimal number (```int```)
+		* c: single character (```int```)
+		* s: a string (```char*```)
+		* f: a double (```double```)
+		* p: pointer (```void*```)
+		
