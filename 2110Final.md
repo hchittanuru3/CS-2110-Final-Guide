@@ -113,4 +113,6 @@
 		* *.exe:* This is the executable, after the files are all linked together.
 		* *Order of Operations:* Source -> Pre-Processor -> Compiler -> Assembler -> Linker -> Executable
 		
-9. ***File I/O:***
+9. ***Basic I/O and File I/O:***
+	* **getchar()**: ```getchar()``` returns the next input character each time it's called, or EOF when it reaches the end of the file. It returns an ```int```.
+	* **putchar()**: ```putchar(c)``` puts the character c on the standard output (usually the screen)
