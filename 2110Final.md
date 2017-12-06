@@ -18,6 +18,7 @@
 		* Not used since the default variable type in C is *auto*
 	* **const:** This keyword tells the compiler that this variable is read only, and cannot be changed once it is initially set
 		* If you try to change it, the code won't compile
+		* http://www.geeksforgeeks.org/const-qualifier-in-c/
 	* **register:** Registers are faster than memory to access, and this keyword tells the compiler to put this data into a register
 		* Typically this is not used, since the compiler can perform these optimizations by itself
 	* **extern:** If you are declaring something that needs to be defined elsewhere
