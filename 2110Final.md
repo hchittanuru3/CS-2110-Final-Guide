@@ -113,7 +113,7 @@
 		* *.exe:* This is the executable, after the files are all linked together.
 		* *Order of Operations:* Source -> Pre-Processor -> Compiler -> Assembler -> Linker -> Executable
 		
-9. ***Basic I/O and File I/O:***
+10. ***Basic I/O:***
 	* **getchar()**: ```getchar()``` returns the next input character each time it's called, or EOF when it reaches the end of the file. It returns an ```int```.
 	* **putchar()**: ```putchar(c)``` puts the character c , or EOF if there's an error, on the standard output (usually the screen). 
 	* **Basic printf() conversions:**
@@ -122,4 +122,9 @@
 		* s: a string (```char*```)
 		* f: a double (```double```)
 		* p: pointer (```void*```)
-		
+
+11. ***File I/O:***
+	* When dealing with a file, you have to create a file pointer ```FILE *fp;``` that holds information about the file.
+	* First step: opening the file. ```fp = fopen(name, mode)``` Mode can either be r, w or a.
+	* Always have to close the file: ```fclose(fp)```
+	* ```fread(void* ptr, size_t size, size_t no_of_elem, FILE *file)``` reads no_of_elem elements from ```file``` and puts it in ```ptr```.
