@@ -248,11 +248,11 @@
 		* pass in the memory address of the char* into the funcrtion
 		```c
 		void swapString(char** a, char** b)
-			{ 
-			  char* temp = *a;
-			  *a = *b;
-			  *b = temp;
-			}
+		{ 
+		  char* temp = *a;
+		  *a = *b;
+		  *b = temp;
+		}
 		```
 
 14. ***qsort Implementation:***
