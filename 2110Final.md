@@ -85,6 +85,30 @@
 		void free(void* pointer);
 		```
 
+	* **realloc:** Resizes the memory block pointed to by a pointer that was allocated with malloc or calloc.
+		```c
+		void *realloc(void* ptr, size_t size);
+		```
+		* To implement realloc, you have to deal with four cases, a combination of null and non-null pointers, and 0 and non zero size.
+		```c
+		void *realloc(void *ptr, size_t size) {
+			if (ptr == NULL) {
+				malloc(size);
+			}
+			if (size == 0) {
+				free(ptr);
+				return NULL;
+			}
+			void *pointer = malloc(size);
+			if (pointer == NULL) {
+				return pointer;
+			}
+			memcpy(pointer, ptr, size); // if ptr's size is less, use that
+			free(ptr);
+			return pointer;
+		}
+		```
+
 7. ***Common C Functions:***
 	* **qsort:** ```qsort(void* arr, size_t numelems, size_t sizeofelem, (int) (*compare) (const void*, const void*));```
 	* **sizeof:** Gives the size of the data type in the given
