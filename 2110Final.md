@@ -300,3 +300,33 @@ int main() {
 		DMA[3].cnt = (240*80) | DMA_ON | DMA_SOURCE_INCREMENT | DMA_DESTINATION_INCREMENT;
 	}
 	```
+16. ***File I/O:***
+	```c
+	#include <stdio.h>
+	#include <stdlib.h>
+	//
+	int main()
+	{
+	   	FILE *ip = fopen("input.txt", "r");
+	   	FILE *op = fopen("out.txt", "w+");
+	   	char b;
+	   	int i;
+		//
+	   	// // open files
+	   	// ip =
+	   // op =
+		//
+	   	char out;
+	   	while(fread(&b, sizeof(b), 1, ip) == 1) {
+	     	b = ~(b);
+	      printf("%c\n", b);
+	      fwrite(&b, sizeof(b), 1, op);
+	   	}
+		//
+	    if (feof(ip)) {
+	      fclose(ip);
+	      fclose(op);
+	  }
+	}
+```
+
