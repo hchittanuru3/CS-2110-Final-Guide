@@ -135,7 +135,7 @@
 		* Function:
 		```c
 		void pack (int a, int b) {
-			unsigned long x;
+			unsigned long long x;
 			x = (a << 32) | b;
 		}
 		```
