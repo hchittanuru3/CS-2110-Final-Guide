@@ -131,6 +131,25 @@
 	* ```fread(void* ptr, size_t size, size_t no_of_elem, FILE *file)``` reads no_of_elem elements from ```file``` and puts it in ```ptr```.
 
 12. ***Bitwise Operations:***
+	* **Packing:**
+		* Function:
+		```c
+		void pack (int a, int b) {
+			unsigned long x;
+			x = (a << 32) | b;
+		}
+		```
+		* Macro:
+		```c
+		#define pack(a, b) (((a) << 32)) | (b))
+		```
+	* **Unpacking:**
+		```c
+		void unpack (unsigned long long src, int *ptr_a, int *ptr_b) {
+			*ptr_b = (int) (src & 0xFFFFFFFF);
+			*ptr_a = (int) ((src << 32) & 0xFFFFFFFF);
+		}
+		```
 
 13. ***Swapping:***
 	* **Swapping Primitives:**
