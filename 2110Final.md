@@ -108,6 +108,17 @@
 			return pointer;
 		}
 		```
+	* **calloc:** Calloc acts like malloc, but it sets the memory to zero.
+		```c
+		void *calloc(size_t nmemb, size_t size) {
+			void *ptr = malloc(size * nmemb);
+			if (ptr == NULL) {
+				return NULL;
+			}
+			memset(ptr, 0, nmemb * size);
+			return ptr;
+		}
+		```
 
 7. ***Common C Functions:***
 	* **qsort:** ```qsort(void* arr, size_t numelems, size_t sizeofelem, (int) (*compare) (const void*, const void*));```
