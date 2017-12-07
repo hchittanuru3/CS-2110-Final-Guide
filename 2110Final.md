@@ -121,13 +121,18 @@
 		```
 
 7. ***Common C Functions:***
-	* **qsort:** ```qsort(void* arr, size_t numelems, size_t sizeofelem, (int) (*compare) (const void*, const void*));```
+	* **qsort:**
+		```c
+			qsort(void* arr, size_t numelems, size_t sizeofelem, (int) (*compare) (const void*, const void*));
+		```
 	* **sizeof:** Gives the size of the data type in the given
 		* Always use sizeof(), compared to hardcoding these values, as different systems might have different implementations
 		```c
 		int size_of_int = sizeof(int);
 		```
 		* This avoids complications, as size of the datatype pointers can differ on different machines, even though datatype sizes remain the same due to C's standard library.
+	* **memcpy:**
+	* **memset:**
 
 8. ***GBA:***
 	* **Size of data types:**
