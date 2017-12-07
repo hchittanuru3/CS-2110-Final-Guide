@@ -14,7 +14,7 @@
 	   ```
 	* **volatile:** This keyword tells the compiler not to optimize anything to do with the variable, and this would be used when you're interfacing with hardware
 	   * For example, if you're using a variable that is mapped to RAM, you want to have a volatile qualifier in front of it, like ```volatile int mappedToMem; ```
-	* **auto:** An auto variable is a variable that is allocated and deallocated automatically when the program flow enters the variable's scope. 
+	* **auto:** An auto variable is a variable that is allocated and deallocated automatically when the program flow enters the variable's scope.
 		* Not used since the default variable type in C is *auto*
 	* **const:** This keyword tells the compiler that this variable is read only, and cannot be changed once it is initially set
 		* If you try to change it, the code won't compile
@@ -24,13 +24,13 @@
 	* **extern:** If you are declaring something that needs to be defined elsewhere
 		* This is present implicitly when you declare variables/ functions without defining them
 		* For code to compile, you need to define the variable somewhere else in the code
-   
+
 2. ***Macros:***
 	* A macro is a code fragment that has been given a name
 		* The C preprocessor goes through the code and replaces any instances of the name with the code that it defines
-	* The format is ```#define ADD(a,b) ((a) + (b))``` or ```#define LIST_SIZE 1024```. 
+	* The format is ```#define ADD(a,b) ((a) + (b))``` or ```#define LIST_SIZE 1024```.
 		* **IMPORTANT: There are parentheses around the arguments in the function macro and no semicolon**
-	
+
 3. ***Pointers:***
 	* A pointer is a variable that contains the address of another variable. The following example illustrates how to use a pointer and assign it:
 	```c
@@ -38,7 +38,7 @@
 	int *ptr;
 	ptr = &x;
 	 ```
-	* Dereferencing pointers is the action of accessing what the pointer is pointing to. The operator ```*``` is used to dereference a pointer. Looking at the previous example, we can say that ```x == *ptr``` is true. 
+	* Dereferencing pointers is the action of accessing what the pointer is pointing to. The operator ```*``` is used to dereference a pointer. Looking at the previous example, we can say that ```x == *ptr``` is true.
 	* **NOTE:** You cannot dereference a void pointer, because C's compiler doesn't know the size of the object it's pointing to. To work around this, we can do the following:
 	```c
 	void *ptr;
@@ -60,9 +60,9 @@
 	}
 	```
 	    * Used for passing functions in as parameters into other functions
-	 
+
 4. ***Structures:***
-	* A structure is a collection of variables grouped together under a single name, similar to a class. 
+	* A structure is a collection of variables grouped together under a single name, similar to a class.
 	```c
 	struct rectangle {
 	  int length;
@@ -81,7 +81,7 @@
 	```c
 	typedef some_alias_name int;
 	```
-	
+
 6. ***Dynamic Memory Allocation:***
 	* **free:** Deallocates the memory pointed to at the adddress
 		```c
@@ -90,7 +90,7 @@
 
 7. ***Common C Functions:***
 	* **qsort:** ```qsort(void* arr, size_t numelems, size_t sizeofelem, (int) (*compare) (const void*, const void*));```
-	* **sizeof:** Gives the size of the data type in the given 
+	* **sizeof:** Gives the size of the data type in the given
 		* Always use sizeof(), compared to hardcoding these values, as different systems might have different implementations
 		```c
 		int size_of_int = sizeof(int);
@@ -112,10 +112,10 @@
 		* *.s:* These are the assembly files, between the assembler and linker.
 		* *.exe:* This is the executable, after the files are all linked together.
 		* *Order of Operations:* Source -> Pre-Processor -> Compiler -> Assembler -> Linker -> Executable
-		
+
 10. ***Basic I/O:***
 	* **getchar()**: ```getchar()``` returns the next input character each time it's called, or EOF when it reaches the end of the file. It returns an ```int```.
-	* **putchar()**: ```putchar(c)``` puts the character c , or EOF if there's an error, on the standard output (usually the screen). 
+	* **putchar()**: ```putchar(c)``` puts the character c , or EOF if there's an error, on the standard output (usually the screen).
 	* **Basic printf() conversions:**
 		* d, i: decimal number (```int```)
 		* c: single character (```int```)
@@ -130,3 +130,28 @@
 	* ```fread(void* ptr, size_t size, size_t no_of_elem, FILE *file)``` reads no_of_elem elements from ```file``` and puts it in ```ptr```.
 
 12. ***Bitwise Operations:***
+
+13. ***Swapping:***
+	* **Swapping Primitives:**
+		```c
+		void swap (int *x, int*y) {
+			int z = *y;
+			*y = *x;
+			*x = *z;
+		}
+		```
+	* **Swapping Structures:**
+		```c
+		void swap_struct (void *a, void *b, int size) {
+			char *aa = (char*)a;
+			char *bb = (char*)b;
+			for (int i = 0; i < size; i++) {
+				char temp = aa[i];
+				aa[i] = bb[i];
+				bb[i] = temp;
+			}
+		}
+		```
+		* The size in this function would be the size of the structure.
+
+
