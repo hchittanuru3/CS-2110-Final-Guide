@@ -101,7 +101,7 @@
 		* *char:* 1 byte
 		* *short:* 2 bytes
 		* *int:* 4 bytes
-		* *pointer:* 8 bytes
+		* *pointer:* 4 bytes
 
 9. ***Compiling:***
 	* **File Formats:**
