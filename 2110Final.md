@@ -80,6 +80,11 @@
 	```
 
 6. ***Dynamic Memory Allocation:***
+	* **malloc:** Allocates a block of memory
+		```c
+		void *malloc(size_t size);
+		```
+
 	* **free:** Deallocates the memory pointed to at the adddress
 		```c
 		void free(void* pointer);
@@ -119,12 +124,13 @@
 			return ptr;
 		}
 		```
+	* **IMPORTANT:** Always remember to free any memory that you allocate once you're done using it.
 
 7. ***Common C Functions:***
 	* **qsort:**
-		```c
-			qsort(void* arr, size_t numelems, size_t sizeofelem, (int) (*compare) (const void*, const void*));
-		```
+	```c
+	qsort(void* arr, size_t numelems, size_t sizeofelem, (int) (*compare) (const void*, const void*));
+	```
 	* **sizeof:** Gives the size of the data type in the given
 		* Always use sizeof(), compared to hardcoding these values, as different systems might have different implementations
 		```c
@@ -171,9 +177,8 @@
 	* **Packing:**
 		* Function:
 		```c
-		void pack (int a, int b) {
-			unsigned long long x;
-			x = (a << 32) | b;
+		unsigned long long pack (int a, int b) {
+			return (a << 32) | b;
 		}
 		```
 		* Macro:
