@@ -146,10 +146,27 @@
 		* *short:* 2 bytes
 		* *int:* 4 bytes
 		* *pointer:* 4 bytes
+	* **Direct Memory Access (DMA):**
+		```c
+		void drawImage(int row, int col, int width, int height, const unsigned short *img) {
+			for (int i = 0; i < height; i++) {
+				DMA[3].src = &img[i * width];
+				DMA[3].dst = &videoBuffer[(row + 1)* 240 + col];
+				DMA[3].cnt = width | DMA_ON | DMA_SOURCE_INCREMENT | DMA_DESTINATION_INCREMENT;
+			}
+		}
+		```
+		```c
+		void fillScreen(unsigned short color) {
+			DMA[3].src = &color;
+			DMA[3].dst = videoBuffer;
+			DMA[3].cnt = (240*160) | DMA_ON | DMA_SOURCE_FIXED | DMA_DESTINATION_INCREMENT
+		}
+		```
 
 9. ***Compiling:***
 	* **File Formats:**
-		* *.c* Source files with code
+		* *.c:* Source files with code
 		* *.h:* Header files with prototypes, structs and macros
 		* *.i:* The file that results after the source files are preprocessed.
 		* *.o:* These are the object files, after files are compiled (produced by the compiler) but not linked.
@@ -227,7 +244,7 @@
 		}
 		```
 
-14. ***qsort Answer:***
+14. ***qsort Implementation:***
 	```c
 	#include <stdio.h>
 	#include <string.h>
