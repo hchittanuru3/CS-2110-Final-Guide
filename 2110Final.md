@@ -48,17 +48,14 @@
 	```
 	* Arrays in C use pointers. We can use a pointer to point to the first element in the array, and everytime you want to access the next element you can increment the pointer and dereference it.
 	* **Function Pointers:** Having a pointer that points to code, usually used for dynamically being able to call a function
-	```c
-	void fun(int a) {
-		printf("This is the value %d", a);
-	}
-	```
-
-	```c
-	int main() {
-		void (*fun_ptr)(int) = fun;
-	}
-	```
+		```c
+		void fun(int a) {
+			printf("This is the value %d", a);
+		}
+		int main() {
+			void (*fun_ptr)(int) = fun;
+		}
+		```
 	    * Used for passing functions in as parameters into other functions
 
 4. ***Structures:***
