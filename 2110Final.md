@@ -233,7 +233,7 @@
 	#include <string.h>
 	//compare method
 	int compare(const void *a, const void *b) {
-    		return *(const int*)a - *(const int*)b;
+    	return *(const int*)a - *(const int*)b;
 	}
 	//qsort method
 	void myqsort(void *arr, size_t nmemb, size_t size, int (*compare) (const void *, const void *)) {
