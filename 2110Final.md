@@ -128,3 +128,5 @@
 	* First step: opening the file. ```fp = fopen(name, mode)``` Mode can either be r, w or a.
 	* Always have to close the file: ```fclose(fp)```
 	* ```fread(void* ptr, size_t size, size_t no_of_elem, FILE *file)``` reads no_of_elem elements from ```file``` and puts it in ```ptr```.
+
+12. ***Bitwise Operations:***
