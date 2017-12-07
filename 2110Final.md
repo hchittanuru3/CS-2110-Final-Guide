@@ -95,6 +95,7 @@
 		```c
 		int size_of_int = sizeof(int);
 		```
+		* This avoids complications, as size of the datatype pointers can differ on different machines, even though datatype sizes remain the same due to C's standard library.
 
 8. ***GBA:***
 	* **Size of data types:**
@@ -154,4 +155,14 @@
 		```
 		* The size in this function would be the size of the structure.
 
+	* **Using memcpy to swap:**
+		```c
+		void mem_swap(void *a, void *b, size_t size) {
+			void *temp = malloc(size);
+			memcpy(temp, a, size);
+			memcpy(a, b, size);
+			memcpy(b, temp, size);
+			free(temp);
+		}
+		```
 
