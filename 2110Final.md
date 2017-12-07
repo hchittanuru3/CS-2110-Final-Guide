@@ -277,3 +277,15 @@ int main() {
 	}
 }
 ```
+
+15. ***DMA Answer:***
+	```c
+	void place(const unsigned short *img, int startrow, unsigned short color) {
+		DMA[3].src = &color;
+		DMA[3].dst = videoBuffer;
+		DMA[3].cnt = (240*160) | DMA_ON | DMA_SOURCE_FIXED | DMA_DESTINATION_INCREMENT;
+		DMA[3].src = &img;
+		DMA[3].dst = &videoBuffer[startrow * 240];
+		DMA[3].cnt = (240*80) | DMA_ON | DMA_SOURCE_INCREMENT | DMA_DESTINATION_INCREMENT;
+	}
+	```
