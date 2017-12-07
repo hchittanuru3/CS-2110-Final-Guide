@@ -89,7 +89,7 @@
 		```
 
 7. ***Common C Functions:***
-	* **qsort:**
+	* **qsort:** ```qsort(void* arr, size_t numelems, size_t sizeofelem, (int) (*compare) (const void*, const void*));```
 	* **sizeof:** Gives the size of the data type in the given 
 		* Always use sizeof(), compared to hardcoding these values, as different systems might have different implementations
 		```c
