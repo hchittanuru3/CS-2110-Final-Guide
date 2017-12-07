@@ -233,30 +233,30 @@
 	#include <string.h>
 	//compare method
 	int compare(const void *a, const void *b) {
-    	return *(const int*)a - *(const int*)b;
+    		return *(const int*)a - *(const int*)b;
 	}
 	//qsort method
 	void myqsort(void *arr, size_t nmemb, size_t size, int (*compare) (const void *, const void *)) {
-    	int i = 0;
-    	while (i < (nmemb * size) - size) {
-        	void *a = arr + i;
-        	void *b = arr + i + size;
-        	if (compare(a, b) > 0) {
-            	void *temp = malloc(size);
-            	memcpy(temp, a, size);
-            	memcpy(a, b, size);
-            	memcpy(b, temp, size);
-            	free(temp);
-        	}
-        	i +=size;
-    	}
+    		int i = 0;
+    		while (i < (nmemb * size) - size) {
+        		void *a = arr + i;
+        		void *b = arr + i + size;
+        		if (compare(a, b) > 0) {
+            			void *temp = malloc(size);
+            			memcpy(temp, a, size);
+            			memcpy(a, b, size);
+            			memcpy(b, temp, size);
+            			free(temp);
+        		}
+        		i +=size;
+    		}
 	}
 	// main method
 	int main() {
-    	int arr[5] = {3, 3, 4, 1, 8};
-    	qsort(arr, 5, sizeof(int), compare);
-    	for (int i = 0; i < 5; i++) {
-        	printf("%d\n", arr[i]);
+    		int arr[5] = {3, 3, 4, 1, 8};
+    		qsort(arr, 5, sizeof(int), compare);
+    		for (int i = 0; i < 5; i++) {
+        		printf("%d\n", arr[i]);
+    		}
     	}
-    }
 	```
