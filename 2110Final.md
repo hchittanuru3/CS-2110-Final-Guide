@@ -243,6 +243,17 @@
 			free(temp);
 		}
 		```
+	* **Swapping Two Null Terminated String**
+		* you have to use a double pointer
+		* pass in the memory address of the char* into the funcrtion
+		```c
+		void swapString(char** a, char** b)
+		{ 
+		  char* temp = *a;
+		  *a = *b;
+		  *b = temp;
+		}
+		```
 
 14. ***qsort Implementation:***
 ```c
@@ -289,6 +300,7 @@ int main() {
 		DMA[3].cnt = (240*80) | DMA_ON | DMA_SOURCE_INCREMENT | DMA_DESTINATION_INCREMENT;
 	}
 	```
+<<<<<<< HEAD
 
 16. ***File I/O:***
 	```c
@@ -319,3 +331,5 @@ int main() {
 	  }
 	}
 ```
+=======
+>>>>>>> 90475dd80b51cc9f8977cd6f06504df598b84292
