@@ -260,32 +260,42 @@
 #include <stdio.h>
 #include <string.h>
 //compare method
-int compare(const void *a, const void *b) {
-	return *(const int*)a - *(const int*)b;
+int compare(const void* a, const void* b)
+{
+  int ai = *(int *) a;
+  int bi = *(int *) b;
+  return ai - bi;
 }
-//qsort method
-void myqsort(void *arr, size_t nmemb, size_t size, int (*compare) (const void *, const void *)) {
-	int i = 0;
-	while (i < (nmemb * size) - size) {
-		void *a = arr + i;
-		void *b = arr + i + size;
-		if (compare(a, b) > 0) {
-			void *temp = malloc(size);
-			memcpy(temp, a, size);
-			memcpy(a, b, size);
-			memcpy(b, temp, size);
-			free(temp);
-		}
-		i +=size;
-	}
+
+void swap (const void* a, const void* b, size_t size)
+{
+  char* temp = malloc(size);
+  char* ai = (char *) a;
+  char* bi = (char *) b;
+  for (int i = 0; i < size; i++)
+  {
+    temp[i] = ai[i];
+    ai[i] = bi[i];
+    bi[i] = temp[i];
+  }
+  free(temp);
 }
-// main method
-int main() {
-	int arr[5] = {3, 3, 4, 1, 8};
-	qsort(arr, 5, sizeof(int), compare);
-	for (int i = 0; i < 5; i++) {
-		printf("%d\n", arr[i]);
-	}
+
+void mysort(void* arr, size_t nelems, size_t elemsize, int (*compare) (const void*, const void*))
+{
+  int x = 0;
+  char* ptr = (char*) arr;
+  while (x < nelems)
+  {
+    for (int i = 0; i < (nelems * elemsize) - elemsize; i += elemsize)
+    {
+      if (compare((ptr + i), (ptr + (i + elemsize))) > 0)
+      {
+        swap(ptr + i, ptr + (i + elemsize), elemsize);
+      }
+    }
+    x++;
+  }
 }
 ```
 
