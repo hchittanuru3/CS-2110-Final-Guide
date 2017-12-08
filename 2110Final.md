@@ -206,7 +206,7 @@
 		```c
 		void unpack (unsigned long long src, int *ptr_a, int *ptr_b) {
 			*ptr_b = (int) (src & 0xFFFFFFFF);
-			*ptr_a = (int) ((src << 32) & 0xFFFFFFFF);
+			*ptr_a = (int) ((src >> 32) & 0xFFFFFFFF);
 		}
 		```
 
