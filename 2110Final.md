@@ -329,3 +329,21 @@ int main() {
 	  	}
 	}
 	```
+17. ***Color Packing and Unpacking:***
+	```c
+	unsigned short pack(char red, char green, char blue) {
+		unsigned short full_color = 0;
+		full_color = full_color | (red >> 3);
+		full_color = full_color | ((unsigned short) green << 2);
+		full_color = full_color | ((unsigned short) blue << 7);
+		full_color = full_color & ~(1 << 15);
+		return full_color;
+	}
+	```
+	```c
+	void unpack(unsigned short res, char* green, char* red, char* blue) {
+	  *blue = (char) (res >> 10) << 3;
+	  *green = (char) (res >> 5) << 3;
+	  *red = (char) (res << 3);
+	}
+	```
