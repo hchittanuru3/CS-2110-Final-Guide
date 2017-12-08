@@ -314,18 +314,18 @@ int main() {
 		//
 	   	// // open files
 	   	// ip =
-	   // op =
+	   	// op =
 		//
 	   	char out;
 	   	while(fread(&b, sizeof(b), 1, ip) == 1) {
-	     	b = ~(b);
-	      printf("%c\n", b);
-	      fwrite(&b, sizeof(b), 1, op);
+	     	    b = ~(b);
+	            printf("%c\n", b);
+	            fwrite(&b, sizeof(b), 1, op);
 	   	}
 		//
-	    if (feof(ip)) {
-	      fclose(ip);
-	      fclose(op);
-	  }
+	    	if (feof(ip)) {
+	      	    fclose(ip);
+	            fclose(op);
+	  	}
 	}
 	```
